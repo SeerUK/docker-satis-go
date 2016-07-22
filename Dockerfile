@@ -8,7 +8,10 @@ RUN \
   chown -R satis: /opt/satis && \
   chown -R satis: /usr/local/bin && \
   apt-get update && \
-  apt-get install -y php5-cli php5-common
+  apt-get install -y php5-cli php5-common && \
+  apt-get autoremove && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
 
 USER satis
 
